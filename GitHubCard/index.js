@@ -3,7 +3,10 @@
            https://api.github.com/users/<your name>
 */
 
-// const gitHubInfo = axios.get('https://api.github.com/users/brandon-harris')
+axios.get('https://rickandmortyapi.com/api/')
+  .then ((response) => {
+    console.log(response)
+  });
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -15,6 +18,14 @@
 /* Step 4: Pass the data received from Github into your function, 
            create a new component and add it to the DOM as a child of .cards
 */
+
+// axios.get('https://api.github.com/users/brandonharris177')
+//   .then (data => {
+//     const card = createCard(data.data);
+//     const cards = document.querySelector('.cards');
+//     cards.appendChild(card);
+//     return cards;
+//   })
 
 // const cards = document.querySelector('.cards');
 // gitHubInfo.forEach(data => {
@@ -53,7 +64,6 @@ const followersArray = [];
 
 */
 
-const cards = document.querySelector('.cards');
 
 function createCard(gitHubInfo) {
   // define new elements
@@ -88,17 +98,17 @@ function createCard(gitHubInfo) {
   userName.classList.add('username');
   
   // set text content
-  cardImg.src = gitHubInfo["avatar_url"];
+  cardImg.src = gitHubInfo.avatar_url;
   cardName.textContent = gitHubInfo.name;
   userName.textContent = gitHubInfo.login;
   userLocation.textContent = gitHubInfo.location;
   userProfileLink.textContent = gitHubInfo.url;
-  userFollowers.textContent = gitHubInfo.followers;
-  userFollowing.textContent = gitHubInfo.following;
+  userFollowers.textContent = `Followers: ${gitHubInfo.followers}`;
+  userFollowing.textContent = `Following: ${gitHubInfo.following}`;
   userBio.textContent = gitHubInfo.bio;
   
-  console.log(card)
-  return card
+  console.log(card);
+  return card;
 }
 
 /* List of LS Instructors Github username's: 
