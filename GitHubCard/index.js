@@ -63,20 +63,24 @@ function createCard(object) {
   const userBio = document.createElement('p');
   
   // Setup structure of elements
-  // panel.appendChild(panelBar)
-  // panel.appendChild(panelContent)
-  // panelBar.appendChild(panelTitle)
-  // panelBar.appendChild(buttonPanel)
-  // buttonPanel.appendChild(buttonOpen)
-  // buttonPanel.appendChild(buttonClose)
+  card.appendChild(cardImg);
+  card.appendChild(cardInfo);
+  cardInfo.appendChild(cardName);
+  cardInfo.appendChild(userName);
+  cardInfo.appendChild(userLocation);
+  cardInfo.appendChild(userProfile);
+  userProfile.appendChild(userProfileLink);
+  cardInfo.appendChild(userFollowers);
+  cardInfo.appendChild(userFollowing);
+  cardInfo.appendChild(userBio);
   
   // set class names
-  // panel.classList.add('panel')
-  // panelBar.classList.add('panel-bar')
-  // buttonPanel.classList.add('panel-buttons')
-  // buttonOpen.classList.add('panel-btn-open')
-  // buttonClose.classList.add('panel-btn-close', 'hide-btn')
-  // panelContent.classList.add('panel-content')
+  card.classList.add('class')
+  cardInfo.classList.add('card-info')
+  cardName.classList.add('name')
+  userName.classList.add('')
+  buttonClose.classList.add('panel-btn-close', 'hide-btn')
+  panelContent.classList.add('panel-content')
   
   // const open = '\u25bc';
   // const close = '\u25b2';
