@@ -127,11 +127,11 @@ function createCard(gitHubInfo) {
   cardImg.src = gitHubInfo.avatar_url;
   cardName.textContent = gitHubInfo.name;
   userName.textContent = gitHubInfo.login;
-  userLocation.textContent = gitHubInfo.location;
-  userProfileLink.textContent = gitHubInfo.url;
+  userLocation.textContent = `Location: ${gitHubInfo.location}`;
+  userProfileLink.textContent = `Profile: ${gitHubInfo.url}`;
   userFollowers.textContent = `Followers: ${gitHubInfo.followers}`;
   userFollowing.textContent = `Following: ${gitHubInfo.following}`;
-  userBio.textContent = gitHubInfo.bio;
+  userBio.textContent = `Bio: ${gitHubInfo.bio}`;
   
   console.log(card);
   return card;
