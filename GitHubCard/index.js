@@ -3,10 +3,10 @@
            https://api.github.com/users/<your name>
 */
 
-axios.get('https://rickandmortyapi.com/api/')
-  .then ((response) => {
-    console.log(response)
-  });
+// axios.get('https://rickandmortyapi.com/api/')
+//   .then ((response) => {
+//     console.log(response)
+//   });
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -19,13 +19,13 @@ axios.get('https://rickandmortyapi.com/api/')
            create a new component and add it to the DOM as a child of .cards
 */
 
-// axios.get('https://api.github.com/users/brandonharris177')
-//   .then (data => {
-//     const card = createCard(data.data);
-//     const cards = document.querySelector('.cards');
-//     cards.appendChild(card);
-//     return cards;
-//   })
+axios.get('https://api.github.com/users/brandonharris177')
+  .then (data => {
+    const card = createCard(data.data);
+    const cards = document.querySelector('.cards');
+    cards.appendChild(card);
+    return cards;
+  })
 
 // const cards = document.querySelector('.cards');
 // gitHubInfo.forEach(data => {
@@ -43,20 +43,23 @@ axios.get('https://rickandmortyapi.com/api/')
 */
 
 const followersArray = [
-  'https://github.com/juarezfrench',
-  'https://github.com/Jonathan-YungHsin-Ho',
-  'https://github.com/DanielWallen87',
-  'https://github.com/jaredkain',
-  'https://github.com/rleslie1015'
+  'https://api.github.com/users/juarezfrench',
+  'https://api.github.com/users/Jonathan-YungHsin-Ho',
+  'https://api.github.com/users/DanielWallen87',
+  'https://api.github.com/users/jaredkain',
+  'https://api.github.com/users/rleslie1015'
 ];
 
-axios.get.forEach(followersArray)
+followersArray.forEach(handle =>{
+  axios.get(`${handle}`)
   .then (data => {
     const card = createCard(data.data);
     const cards = document.querySelector('.cards');
     cards.appendChild(card);
     return cards;
   });
+});
+
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
