@@ -19,21 +19,23 @@
            create a new component and add it to the DOM as a child of .cards
 */
 
-// axios.get('https://api.github.com/users/brandonharris177')
-//   .then (element => {
-//     const card = createCard(element.data);
-//     const cards = document.querySelector('.cards');
-//     cards.appendChild(card);
-//     return cards;
-//   })
-
 axios.get('https://api.github.com/users/brandonharris177')
   .then (gitHubInfo => {
+    // console.log(gitHubInfo);
     const card = createCard(gitHubInfo.data);
     const cards = document.querySelector('.cards');
     cards.appendChild(card);
     return cards;
   })
+
+// axios.get('https://api.github.com/users/brandonharris177')
+//   .then((gitHubInfo) => {
+//   console.log(gitHubInfo);
+//   const card = createCard(gitHubInfo.item);
+//   const cards = document.querySelector('.cards');
+//   cards.appendChild(card);
+//   return cards
+//   });
 
 // gitHubInfo.forEach(data => {
 //   cards.appendChild(createPanel(Object))
@@ -49,23 +51,23 @@ axios.get('https://api.github.com/users/brandonharris177')
           user, and adding that card to the DOM.
 */
 
-// const followersArray = [
-//   'https://api.github.com/users/juarezfrench',
-//   'https://api.github.com/users/Jonathan-YungHsin-Ho',
-//   'https://api.github.com/users/DanielWallen87',
-//   'https://api.github.com/users/jaredkain',
-//   'https://api.github.com/users/rleslie1015'
-// ];
+const followersArray = [
+  'https://api.github.com/users/juarezfrench',
+  'https://api.github.com/users/Jonathan-YungHsin-Ho',
+  'https://api.github.com/users/DanielWallen87',
+  'https://api.github.com/users/jaredkain',
+  'https://api.github.com/users/rleslie1015'
+];
 
-// followersArray.forEach(handle =>{
-//   axios.get(`${handle}`)
-//   .then (data => {
-//     const card = createCard(data.data);
-//     const cards = document.querySelector('.cards');
-//     cards.appendChild(card);
-//     return cards;
-//   });
-// });
+followersArray.forEach(handle =>{
+  axios.get(`${handle}`)
+  .then (data => {
+    const card = createCard(data.data);
+    const cards = document.querySelector('.cards');
+    cards.appendChild(card);
+    return cards;
+  });
+});
 
 
 /* Step 3: Create a function that accepts a single object as its only argument,
