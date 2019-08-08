@@ -3,7 +3,7 @@
            https://api.github.com/users/<your name>
 */
 
-axios.get('https://api.github.com/users/brandon-harris')
+// const gitHubInfo = axios.get('https://api.github.com/users/brandon-harris')
 
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
@@ -16,7 +16,10 @@ axios.get('https://api.github.com/users/brandon-harris')
            create a new component and add it to the DOM as a child of .cards
 */
 
-
+// const cards = document.querySelector('.cards');
+// gitHubInfo.forEach(data => {
+//   cards.appendChild(createPanel(Object))
+// })
 
 /* Step 5: Now that you have your own card getting added to the DOM, either 
           follow this link in your browser https://api.github.com/users/<Your github name>/followers 
@@ -50,7 +53,9 @@ const followersArray = [];
 
 */
 
-function createCard(Object) {
+const cards = document.querySelector('.cards');
+
+function createCard(gitHubInfo) {
   // define new elements
   const card = document.createElement('div');
   const cardImg = document.createElement('img');
@@ -77,22 +82,23 @@ function createCard(Object) {
   cardInfo.appendChild(userBio);
   
   // set class names
-  card.classList.add('class');
+  card.classList.add('card');
   cardInfo.classList.add('card-info');
   cardName.classList.add('name');
   userName.classList.add('username');
   
   // set text content
-  cardImg.src = avatar_url;
-  cardName.textContent = name;
-  userName.textContent = login;
-  userLocation.textContent = location;
-  userProfileLink.textContent = url;
-  userFollowers.textContent = followers;
-  userFollowing.textContent = following;
-  userBio.textContent = bio;
+  cardImg.src = gitHubInfo["avatar_url"];
+  cardName.textContent = gitHubInfo.name;
+  userName.textContent = gitHubInfo.login;
+  userLocation.textContent = gitHubInfo.location;
+  userProfileLink.textContent = gitHubInfo.url;
+  userFollowers.textContent = gitHubInfo.followers;
+  userFollowing.textContent = gitHubInfo.following;
+  userBio.textContent = gitHubInfo.bio;
   
-  return Card
+  console.log(card)
+  return card
 }
 
 /* List of LS Instructors Github username's: 
