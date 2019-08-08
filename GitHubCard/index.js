@@ -3,6 +3,8 @@
            https://api.github.com/users/<your name>
 */
 
+axios.get('https://api.github.com/users/brandon-harris')
+
 /* Step 2: Inspect and study the data coming back, this is YOUR 
    github info! You will need to understand the structure of this 
    data in order to use it to build your component function 
@@ -45,6 +47,47 @@ const followersArray = [];
 </div>
 
 */
+
+function createCard(object) {
+  // define new elements
+  const card = document.createElement('div');
+  const cardImg = document.createElement('img');
+  const cardInfo = document.createElement('div');
+  const cardName = document.createElement('h3');
+  const userName = document.createElement('p');
+  const userLocation = document.createElement('p');
+  const userProfile = document.createElement('p');
+  const userProfileLink = document.createElement('a');
+  const userFollowers = document.createElement('p');
+  const userFollowing = document.createElement('p');
+  const userBio = document.createElement('p');
+  
+  // Setup structure of elements
+  // panel.appendChild(panelBar)
+  // panel.appendChild(panelContent)
+  // panelBar.appendChild(panelTitle)
+  // panelBar.appendChild(buttonPanel)
+  // buttonPanel.appendChild(buttonOpen)
+  // buttonPanel.appendChild(buttonClose)
+  
+  // set class names
+  // panel.classList.add('panel')
+  // panelBar.classList.add('panel-bar')
+  // buttonPanel.classList.add('panel-buttons')
+  // buttonOpen.classList.add('panel-btn-open')
+  // buttonClose.classList.add('panel-btn-close', 'hide-btn')
+  // panelContent.classList.add('panel-content')
+  
+  // const open = '\u25bc';
+  // const close = '\u25b2';
+  // set text content
+  // buttonOpen.textContent = open
+  // buttonClose.textContent = close
+  // panelContent.textContent = content
+  // panelTitle.textContent = title
+  
+  return Card
+}
 
 /* List of LS Instructors Github username's: 
   tetondan
