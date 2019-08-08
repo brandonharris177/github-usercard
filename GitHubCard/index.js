@@ -42,7 +42,21 @@ axios.get('https://rickandmortyapi.com/api/')
           user, and adding that card to the DOM.
 */
 
-const followersArray = [];
+const followersArray = [
+  'https://github.com/juarezfrench',
+  'https://github.com/Jonathan-YungHsin-Ho',
+  'https://github.com/DanielWallen87',
+  'https://github.com/jaredkain',
+  'https://github.com/rleslie1015'
+];
+
+axios.get.forEach(followersArray)
+  .then (data => {
+    const card = createCard(data.data);
+    const cards = document.querySelector('.cards');
+    cards.appendChild(card);
+    return cards;
+  });
 
 /* Step 3: Create a function that accepts a single object as its only argument,
           Using DOM methods and properties, create a component that will return the following DOM element:
