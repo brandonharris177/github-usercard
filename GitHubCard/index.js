@@ -16,6 +16,8 @@ axios.get('https://api.github.com/users/brandon-harris')
            create a new component and add it to the DOM as a child of .cards
 */
 
+
+
 /* Step 5: Now that you have your own card getting added to the DOM, either 
           follow this link in your browser https://api.github.com/users/<Your github name>/followers 
           , manually find some other users' github handles, or use the list found 
@@ -48,7 +50,7 @@ const followersArray = [];
 
 */
 
-function createCard(object) {
+function createCard(Object) {
   // define new elements
   const card = document.createElement('div');
   const cardImg = document.createElement('img');
@@ -75,20 +77,20 @@ function createCard(object) {
   cardInfo.appendChild(userBio);
   
   // set class names
-  card.classList.add('class')
-  cardInfo.classList.add('card-info')
-  cardName.classList.add('name')
-  userName.classList.add('')
-  buttonClose.classList.add('panel-btn-close', 'hide-btn')
-  panelContent.classList.add('panel-content')
+  card.classList.add('class');
+  cardInfo.classList.add('card-info');
+  cardName.classList.add('name');
+  userName.classList.add('username');
   
-  // const open = '\u25bc';
-  // const close = '\u25b2';
   // set text content
-  // buttonOpen.textContent = open
-  // buttonClose.textContent = close
-  // panelContent.textContent = content
-  // panelTitle.textContent = title
+  cardImg.src = avatar_url;
+  cardName.textContent = name;
+  userName.textContent = login;
+  userLocation.textContent = location;
+  userProfileLink.textContent = url;
+  userFollowers.textContent = followers;
+  userFollowing.textContent = following;
+  userBio.textContent = bio;
   
   return Card
 }
