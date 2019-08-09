@@ -25,7 +25,7 @@ axios.get('https://api.github.com/users/brandonharris177')
     const card = createCard(gitHubInfo.data);
     const cards = document.querySelector('.cards');
     cards.appendChild(card);
-    return cards;
+    // return cards;
   })
 
 // axios.get('https://api.github.com/users/brandonharris177')
@@ -65,7 +65,7 @@ followersArray.forEach(handle =>{
     const card = createCard(data.data);
     const cards = document.querySelector('.cards');
     cards.appendChild(card);
-    return cards;
+    // return cards;
   });
 });
 
